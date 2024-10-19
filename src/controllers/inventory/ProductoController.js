@@ -9,6 +9,7 @@ const Archivo = require("../../models/global/Archivo.js");
 
 class ProductoController {
   constructor() {}
+
   async getAll(req, res) {
     const { tenantid } = req.headers;
     console.log("tenantId: ", tenantid);
@@ -58,6 +59,7 @@ class ProductoController {
 
     return res.status(200).json(resp);
   }
+  
   async GetProductsFact(req, res) {
     const productos = await Producto.findAll({
       attributes: ["id", "nombre", "precio"],
