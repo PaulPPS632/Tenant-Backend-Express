@@ -36,7 +36,7 @@ class ProductoSerie extends Model {
       foreignKey: "ProductoSerieId",
       sourceKey: "id",
     });
-
+    /*
     this.hasMany(models.DetalleVenta, {
       foreignKey: "ProductoSerieId",
       sourceKey: "id",
@@ -44,6 +44,17 @@ class ProductoSerie extends Model {
     models.DetalleVenta.belongsTo(this, {
       foreignKey: "ProductoSerieId",
       sourceKey: "id",
+    });
+*/
+    // Relación hasMany hacia la tabla intermedia SeriesDetalle
+    this.hasMany(models.SerieDetalle, {
+      foreignKey: "ProductoSerieId",
+      as: "seriesDetalles", // Alias para acceder a la relación
+    });
+
+    models.SerieDetalle.belongsTo(this, {
+      foreignKey: "ProductoSerieId",
+      as: "productoSerie",
     });
   }
 }

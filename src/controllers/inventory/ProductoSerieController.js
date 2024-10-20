@@ -9,13 +9,17 @@ const Categoria = require("../../models/inventory/Categoria.js");
 class ProductoSerieController {
   async getSeriesByProductoId(req, res) {
     const { id } = req.params;
+    const { tenantid } = req.headers;
+    console.log("tenantID: ", tenantid);
     const series = await ProductoSerie.findAll({
       where: {
         ProductoId: id,
         EstadoProductoId: 1,
+        tenantId: tenantid,
       },
       attributes: ["sn"],
     });
+    console.log(series);
     return res.json(series);
   }
   async getBelong(req, res) {

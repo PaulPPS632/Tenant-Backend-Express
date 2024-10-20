@@ -27,6 +27,12 @@ class Tenant extends Model {
         adicionales: {
           type: DataTypes.JSON,
         },
+        ubigeo: {
+          type: DataTypes.STRING,
+        },
+        claveCertificado: {
+          type: DataTypes.STRING,
+        },
       }, // attributes
       {
         sequelize,

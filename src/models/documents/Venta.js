@@ -42,8 +42,8 @@ class Venta extends Model {
         tipo_cambio: {
           type: DataTypes.DOUBLE,
         },
-        tenandId: {
-          type: DataTypes.UUID,
+        tenantId: {
+          type: DataTypes.STRING,
         },
       }, // attributes
       {
@@ -59,10 +59,12 @@ class Venta extends Model {
     this.hasMany(models.DetalleVenta, {
       foreignKey: "VentaId",
       sourceKey: "id",
+      as: "detalleventa",
     });
     models.DetalleVenta.belongsTo(this, {
       foreignKey: "VentaId",
       targetKey: "id",
+      as: "detalleventa",
     });
   }
 }

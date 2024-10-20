@@ -26,11 +26,13 @@ const Pedidos = require("./inventory/Pedidos.js");
 const Producto = require("./inventory/Producto.js");
 const ProductoSerie = require("./inventory/ProductoSerie.js");
 const SubCategoria = require("./inventory/SubCategoria.js");
+const SerieDetalle = require("./documents/SerieDetalle.js");
 
 const models = {
   Correlativo,
   NumeracionComprobante,
   TipoComprobante,
+  SerieDetalle,
   Compra,
   DetalleCompra,
   Venta,

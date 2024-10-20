@@ -24,6 +24,7 @@ class CompraController {
       total,
       detalles,
     } = req.body;
+    const { tenantid } = req.headers;
     if (documento_cliente == null || documento_cliente == "")
       return res.status(400).json({ message: "El cliente es requerido" });
     if (detalles.length == 0)
@@ -64,6 +65,7 @@ class CompraController {
                   ProductoId: producto.id,
                   sn: serie,
                   EstadoProductoId: 1,
+                  tenantId: tenantid,
                 });
                 await DetalleCompra.create({
                   CompraId: CompraRegist.id,

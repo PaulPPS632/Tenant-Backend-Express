@@ -127,11 +127,12 @@ class EntidadController {
   async createNewTenant(req, res) {
     const { usuario, tenant } = req.body;
     const newTenant = await Tenant.create({
-      name: tenant.nombre,
+      nombre: tenant.nombre,
       tiponegocio: tenant.tiponegocio,
       ruc: tenant.ruc,
       clavesol: tenant.clavesol,
       paleta: tenant.paleta,
+      claveCertificado: tenant.claveCertificado,
     });
     const ROL = await Rol.findOne({ where: { id: usuario.RolId } });
     if (!ROL) return res.status(400).json({ message: "Rol no valido" });
