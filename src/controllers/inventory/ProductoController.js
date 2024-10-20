@@ -261,6 +261,7 @@ class ProductoController {
 
     //return res.status(200).json(resp);
   }
+  
   async Create(req, res) {
     // Llamar a multer para procesar la subida de archivos
     const {
@@ -334,6 +335,7 @@ class ProductoController {
         .json({ message: "Producto Registrado Exitosamente" });
     }
   }
+
   async Update(req, res) {
     const {
       id,
