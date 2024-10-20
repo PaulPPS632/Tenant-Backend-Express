@@ -24,6 +24,7 @@
     "@xmldom/xmldom": "^0.9.4",
     "adm-zip": "^0.5.16",
     "axios": "^1.7.7",
+    "backexpress": "file:",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",

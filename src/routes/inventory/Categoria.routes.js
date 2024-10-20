@@ -10,6 +10,6 @@ CategoriaRouter.post("", CategoriaController.Save);
 CategoriaRouter.post("/saves", CategoriaController.SavesAll);
 CategoriaRouter.get("/subs/:id", CategoriaController.SubCategoriaBelongs);
 CategoriaRouter.put("/:id", CategoriaController.Update);
-CategoriaRouter.delete(":id", CategoriaController.Delete);
+CategoriaRouter.delete("/:id", CategoriaController.Delete);
 
 module.exports = CategoriaRouter;
