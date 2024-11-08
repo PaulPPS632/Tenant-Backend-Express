@@ -13,7 +13,12 @@ class App {
     this.server.use(express.json());
     this.server.use(cors());
     const uploadsDir = path.resolve(__dirname, "../public/uploads");
+    const documentsDir = path.resolve(
+      __dirname,
+      "../public/documents/cotizaciones"
+    );
     this.server.use("/api/uploads", express.static(uploadsDir));
+    this.server.use("/api/cotizaciones", express.static(documentsDir));
   }
 
   routes() {
@@ -45,6 +50,14 @@ class App {
       Routes.DocumentsRoutes.CompraRoutes
     );
     this.server.use("/api/inventory/venta", Routes.DocumentsRoutes.VentaRoutes);
+    this.server.use(
+      "/api/inventory/cotizacion",
+      Routes.DocumentsRoutes.CotizacionRoutes
+    );
+    this.server.use(
+      "/api/inventory/reportes",
+      Routes.GlobalRoutes.ReportesRoutes
+    );
     this.server.use(
       "/api/inventory/archivos",
       Routes.GlobalRoutes.ArchivoRoutes

@@ -39,7 +39,7 @@ class DetalleVenta extends Model {
       }, // attributes
       {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         tableName: "DetalleVenta",
       }
     );
@@ -48,12 +48,12 @@ class DetalleVenta extends Model {
   }
   static associate(models) {
     // Relación hasMany hacia la tabla intermedia SeriesDetalle
-    this.hasMany(models.SerieDetalle, {
+    this.hasMany(models.SerieDetalleVenta, {
       foreignKey: "DetalleVentaId",
       as: "seriesDetalles", // Alias para acceder a la relación
     });
 
-    models.SerieDetalle.belongsTo(this, {
+    models.SerieDetalleVenta.belongsTo(this, {
       foreignKey: "DetalleVentaId",
       as: "detalleVenta",
     });

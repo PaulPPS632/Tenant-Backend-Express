@@ -47,10 +47,12 @@ class Producto extends Model {
     this.hasMany(models.ProductoSerie, {
       foreignKey: "ProductoId",
       sourceKey: "id",
+      as: "productoSerie",
     });
     models.ProductoSerie.belongsTo(this, {
       foreignKey: "ProductoId",
       targetKey: "id",
+      as: "producto",
     });
   }
 }

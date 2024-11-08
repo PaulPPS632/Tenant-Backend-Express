@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 
-class SerieDetalle extends Model {
+class SerieDetalleCotizacion extends Model {
   static init(sequelize) {
     super.init(
       {
@@ -12,7 +12,7 @@ class SerieDetalle extends Model {
         DetalleVentaId: {
           type: DataTypes.UUID,
           references: {
-            model: "DetalleVenta", // Nombre de la tabla
+            model: "DetalleCotizacion", // Nombre de la tabla
             key: "id",
           },
         },
@@ -29,8 +29,8 @@ class SerieDetalle extends Model {
       },
       {
         sequelize,
-        timestamps: true,
-        tableName: "SeriesDetalle",
+        timestamps: false,
+        tableName: "SeriesDetalleCotizacion",
       }
     );
 
@@ -38,4 +38,4 @@ class SerieDetalle extends Model {
   }
 }
 
-module.exports = SerieDetalle;
+module.exports = SerieDetalleCotizacion;

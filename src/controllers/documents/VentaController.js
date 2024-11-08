@@ -4,7 +4,7 @@ const { Op, Sequelize } = require("sequelize");
 const ProductoSerie = require("../../models/inventory/ProductoSerie.js");
 const DetalleVenta = require("../../models/documents/DetalleVenta.js");
 const Sunat = require("../../services/Sunat.js");
-const SerieDetalle = require("../../models/documents/SerieDetalle.js");
+const SerieDetalle = require("../../models/documents/SerieDetalleVenta.js");
 
 class VentaController {
   async Register(req, res) {

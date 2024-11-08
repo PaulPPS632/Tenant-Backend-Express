@@ -134,6 +134,39 @@ class Entidad extends Model {
       as: "entidadNegocioVenta",
     });
 
+    this.hasMany(models.Cotizacion, {
+      foreignKey: {
+        name: "EntidadId",
+        type: DataTypes.UUID,
+      },
+      sourceKey: "id",
+      as: "entidadClienteCotizacion",
+    });
+    models.Cotizacion.belongsTo(this, {
+      foreignKey: {
+        name: "EntidadId",
+        type: DataTypes.UUID,
+      },
+      targetKey: "id",
+      as: "entidadClienteCotizacion",
+    });
+    this.hasMany(models.Cotizacion, {
+      foreignKey: {
+        name: "EntidadNegocioId",
+        type: DataTypes.UUID,
+      },
+      sourceKey: "id",
+      as: "entidadNegocioCotizacion",
+    });
+    models.Cotizacion.belongsTo(this, {
+      foreignKey: {
+        name: "EntidadNegocioId",
+        type: DataTypes.UUID,
+      },
+      targetKey: "id",
+      as: "entidadNegocioCotizacion",
+    });
+
     // conexion con Pedidos
     this.hasMany(models.Pedidos, {
       foreignKey: {

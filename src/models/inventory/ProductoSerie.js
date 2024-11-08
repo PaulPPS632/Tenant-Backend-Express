@@ -47,12 +47,12 @@ class ProductoSerie extends Model {
     });
 */
     // Relación hasMany hacia la tabla intermedia SeriesDetalle
-    this.hasMany(models.SerieDetalle, {
+    this.hasMany(models.SerieDetalleVenta, {
       foreignKey: "ProductoSerieId",
-      as: "seriesDetalles", // Alias para acceder a la relación
+      as: "seriesDetallesVenta", // Alias para acceder a la relación
     });
 
-    models.SerieDetalle.belongsTo(this, {
+    models.SerieDetalleVenta.belongsTo(this, {
       foreignKey: "ProductoSerieId",
       as: "productoSerie",
     });

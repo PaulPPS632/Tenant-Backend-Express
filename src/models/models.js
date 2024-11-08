@@ -26,17 +26,23 @@ const Pedidos = require("./inventory/Pedidos.js");
 const Producto = require("./inventory/Producto.js");
 const ProductoSerie = require("./inventory/ProductoSerie.js");
 const SubCategoria = require("./inventory/SubCategoria.js");
-const SerieDetalle = require("./documents/SerieDetalle.js");
+const Cotizacion = require("./documents/Cotizacion.js");
+const DetalleCotizacion = require("./documents/DetalleCotizacion.js");
+const SerieDetalleCotizacion = require("./documents/SerieDetalleCotazacion.js");
+const SerieDetalleVenta = require("./documents/SerieDetalleVenta.js");
 
 const models = {
   Correlativo,
   NumeracionComprobante,
   TipoComprobante,
-  SerieDetalle,
+  SerieDetalleVenta,
   Compra,
   DetalleCompra,
   Venta,
   DetalleVenta,
+  Cotizacion,
+  DetalleCotizacion,
+  SerieDetalleCotizacion,
   Tenant,
   Archivo,
   Entidad,
